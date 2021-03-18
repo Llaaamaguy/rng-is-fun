@@ -1,5 +1,6 @@
 from base64 import b64encode, b64decode
 import random
+import sys
 
 def single_byte_xor(message, key, encrypt=True):
     random.seed(key)
@@ -34,6 +35,8 @@ def main():
         key = input("What is key?\n")
         key = int(key)
         print(single_byte_xor(userinput, key, encrypt=False))
+    elif mode == "exit":
+        sys.exit(1)
     else:
         print("idot\n")
 
